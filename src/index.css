@@ -22,3 +22,28 @@ code {
 .navBars h1{
   text-align: center;
 }
+.container{
+  width:50%;
+  position:absolute;
+  background:#ccc;
+  left:25%;
+  top:25%;
+}
+.jokes{
+  width:75%;
+  position: relative;
+  left:11%;
+  border:1px solid black;
+  
+  margin:10px;
+}
+.question{
+  width:100%;
+  background:yellow;
+  color:red;
+}
+.answer{
+  width:100%;
+  background:yellowgreen;
+  color:blue;
+}
