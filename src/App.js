@@ -1,12 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
+import TodoItem from './TodoItem'
 const App =() =>  {
   return(
-    <div> <Header /> <Main /> <Footer /> </div>
+    <div> <TodoItem /><TodoItem /><TodoItem /><TodoItem /><TodoItem /> </div>
   )
 }
 
