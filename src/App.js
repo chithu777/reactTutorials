@@ -1,15 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Joke from './joke'
+import Joke from './joke';
+import productsData from './productsData';
+const productsDatas = productsData.map(datas => {console.log(datas.question);
+  return <Joke key={datas.id} quesion = {datas.question} answer={datas.answer} />
+});
 const App =() =>  {
   return(
     <div className="container"> 
-      <Joke quesion="question1" answer="answer1" />
-      <Joke  answer="answer2" />
-      <Joke quesion="question3" answer="answer3" />
-      <Joke  answer="answer4" />
-      <Joke quesion="question5" answer="answer5" /> 
+      {productsDatas}
     </div>
   )
 }
