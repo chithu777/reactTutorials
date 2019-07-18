@@ -6,13 +6,17 @@ class App extends Component{
   constructor(){
     super();
     const ProductsData = productsData.map((data, index)=>{
-      return <TodoItem key={index} answer={data.answer} checkes={false} />
+      return <TodoItem key={index} answer={data.answer} checkes={true} />
     });
     this.state = {"ProductsData":ProductsData,clickCount:0}
     this.changeCount = this.changeCount.bind(this)
   }
   changeCount(){
-    this.setState({clickCount:1})
+    this.setState((prevState)=>{
+      return{
+        clickCount: prevState.clickCount + 1
+      }
+    })
   }
   render(){
 
