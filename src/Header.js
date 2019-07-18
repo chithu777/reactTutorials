@@ -1,10 +1,12 @@
 import React from 'react';
-function Header(){
 
-    return(
-        <header className="navBars">
-            <h1>My Header</h1>
-        </header>
-    )
+class Header extends React.Component{
+    render(){
+        return (
+            <header className="navBars">
+                <h1>Welcome, {this.props.username}!</h1>
+             </header>
+        )
+    }
 }
 export default Header
