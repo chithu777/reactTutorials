@@ -1,16 +1,20 @@
 import React,{Component} from 'react';
-
+import {productsData} from './productsData'
+import TodoItem from './TodoItem';
 class App extends Component{
 
   constructor(){
     super();
-    this.state = {boolVals:false}
+    const ProductsData = productsData.map((data)=>{
+      return <TodoItem answer={data.answer} />
+    });
+    this.state = {"ProductsData":ProductsData}
   }
   render(){
 
     return (
       <div>
-        you are currently logged {this.state.boolVals ? ('in'): ("Out")}
+        {this.state.ProductsData}
       </div>
     )
   }
