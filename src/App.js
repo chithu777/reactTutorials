@@ -1,17 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
 import './App.css';
-import Joke from './joke';
-import productsData from './productsData';
-const productsDatas = productsData.map(datas => {console.log(datas.question);
-  return <Joke key={datas.id} quesion = {datas.question} answer={datas.answer} />
-});
-const App =() =>  {
-  return(
-    <div className="container"> 
-      {productsDatas}
-    </div>
-  )
-}
+import TodoItem from './TodoItem';
+import {productsData} from './productsData';
 
-export default App;
+export default class App extends Component {
+  
+  constructor(props){
+    super(props);
+    this.state={
+      name:'vikram',
+    }
+  }
+
+  
+  componentDidMount() {
+    console.log("mydata----->",productsData);
+  }
+
+  renderItems=()=>{
+    return productsData.map((value,key)=>{
+      return <TodoItem key={key} answer={value.answer}/>
+    })
+  }
+
+
+
+  render(){
+    
+    return(
+        <div>
+          {this.renderItems()}
+        </div>
+    );
+  }
+} 
