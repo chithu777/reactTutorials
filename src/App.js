@@ -8,16 +8,18 @@ class App extends Component{
     const ProductsData = productsData.map((data, index)=>{
       return <TodoItem key={index} answer={data.answer} checkes={false} />
     });
-    this.state = {"ProductsData":ProductsData}
+    this.state = {"ProductsData":ProductsData,clickCount:0}
+    this.changeCount = this.changeCount.bind(this)
   }
-  changeContent(){
-    this.setState()
+  changeCount(){
+    this.setState({clickCount:1})
   }
   render(){
 
     return (
       <div>
-        <button onClick={this.changeContent()}>Click Me</button>
+        <button onClick={this.changeCount}>Change</button>
+        <p>{this.state.clickCount}</p>
         {this.state.ProductsData}
       </div>
     )
