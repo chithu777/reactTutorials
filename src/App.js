@@ -1,34 +1,23 @@
-import React,{Component} from 'react';
-import {productsData} from './productsData'
-import TodoItem from './TodoItem';
-class App extends Component{
-
+import React from 'react';
+class App extends React.Component{
   constructor(){
     super();
-    const ProductsData = productsData.map((data, index)=>{
-      return <TodoItem key={index} answer={data.answer} checkes={true} />
-    });
-    this.state = {"ProductsData":ProductsData,clickCount:0}
-    this.changeCount = this.changeCount.bind(this)
+    this.state={count:1}
+    this.updateCount=this.updateCount.bind(this);
   }
-  changeCount(){
+  updateCount(){
     this.setState((prevState)=>{
-      return{
-        clickCount: prevState.clickCount + 1
-      }
+      return {count: prevState.count+1}
     })
   }
   render(){
-
-    return (
+    return(
       <div>
-        <button onClick={this.changeCount}>Change</button>
-        <p>{this.state.clickCount}</p>
-        {this.state.ProductsData}
+        <button onClick={this.updateCount}>Change</button>
+        <p>{this.state.count}</p>
+        
       </div>
     )
   }
 }
-
 export default App
-
