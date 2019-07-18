@@ -1,36 +1,18 @@
-import React,{Component} from 'react';
-import './App.css';
-import TodoItem from './TodoItem';
-import {productsData} from './productsData';
+import React from 'react';
 
-export default class App extends Component {
-  
-  constructor(props){
-    super(props);
-    this.state={
-      name:'vikram',
+
+class App extends React.Component{
+    method(){
+      return "true"
     }
-  }
-
-  
-  componentDidMount() {
-    console.log("mydata----->",productsData);
-  }
-
-  renderItems=()=>{
-    return productsData.map((value,key)=>{
-      return <TodoItem key={key} answer={value.answer}/>
-    })
-  }
-
-
-
-  render(){
-    
-    return(
+    render(){
+      return(
         <div>
-          {this.renderItems()}
+          <h1>{this.method()} is {this.props.propvals}</h1>
         </div>
-    );
-  }
-} 
+      )
+    }
+}
+
+export default App
+
