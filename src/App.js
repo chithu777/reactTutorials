@@ -1,4 +1,6 @@
 import React from 'react';
+import TodoItem from './TodoItem';
+import {productsData} from './productsData';
 class App extends React.Component{
   constructor(){
     super();
@@ -11,11 +13,14 @@ class App extends React.Component{
     })
   }
   render(){
+    const products =productsData.map((data,index)=>{
+      return <TodoItem key={index} data={data} />
+    });
     return(
       <div>
         <button onClick={this.updateCount}>Change</button>
         <p>{this.state.count}</p>
-        
+        {products}
       </div>
     )
   }
